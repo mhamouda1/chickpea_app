@@ -78,15 +78,21 @@ end
 ####################################
 #### --- Linux Aliases --- #########
 ####################################
-`echo 'alias tf="terraform"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tf='`.empty?
-`echo 'alias tfa="terraform apply -auto-approve"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tfa='`.empty?
-`echo 'alias tfd="terraform destroy -force"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tfd='`.empty?
-`echo 'alias wip="git add . && git commit -m \'wip\' && git push"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias wip='`.empty?
-`echo 'alias k="kubectl"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias k='`.empty?
-`echo 'alias d="docker"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias d='`.empty?
-`echo 'alias dc="docker-compose"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias dc='`.empty?
-`echo 'alias sbp="source ~/.bash_profile"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias sbp='`.empty?
-`echo 'alias cbp="cat ~/.bash_profile"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias cbp='`.empty?
+@linux_aliases = {
+  tf: "terraform",
+  tfa: "terraform apply -auto-approve",
+  tfd: "terraform destroy -force",
+  wip: "git add . && git commit -m \'wip\' && git push",
+  k: "kubectl",
+  d: "docker",
+  dc: "docker-compose",
+  sbp: "source ~/.bash_profile",
+  cbp: "cat ~/.bash_profile",
+  ebp: "vim ~/.bash_profile"
+}
+@linux_aliases.each do |k,v|
+  `echo 'alias #{k}="#{v}"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias #{k}='`.empty?
+end
 
 ####################################
 ########## --- Done! --- ###########
