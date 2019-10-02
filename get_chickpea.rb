@@ -3,7 +3,6 @@
 require 'open3'
 require 'colorize'
 require 'pry'
-# require 'colorized_string'
 #sets up a development server
 ####################################
 ######### --- Pre-requisites --- ###
