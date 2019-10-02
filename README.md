@@ -1,4 +1,4 @@
-Install git and clone the project
+Install git, clone the project, install rvm/ruby/bundler, and run setup
 ```bash
 yum update -y && \
 yum install git -y && \
