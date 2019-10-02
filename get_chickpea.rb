@@ -1,13 +1,14 @@
-# `sudo gem install colorize`
-# `sudo gem install pry`
 require 'open3'
 require 'colorize'
 require 'pry'
+
 #sets up a development server
 ####################################
 ######### --- Pre-requisites --- ###
 ####################################
 #- ruby 2.0+
+#  - colorize gem # gem install colorize
+#  - pry gem # gem install pry
 #- git 1.8+
 
 ####################################
