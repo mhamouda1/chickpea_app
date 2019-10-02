@@ -20,7 +20,7 @@ require 'pry'
               AWS_SECRET_ACCESS_KEY: ENV['AWS_SECRET_ACCESS_KEY'] }
 
 @aws_vars.each do |k,v|
-  env_variable = `source ~/.bash_profile && echo #{v}`.chomp
+  env_variable = `source ~/.bash_profile && echo $#{v}`.chomp
   if env_variable.empty?
     puts "please enter #{k}"
     @aws_vars[k] = gets.chomp
@@ -69,8 +69,23 @@ end
 end
 
 ####################################
-## - Linux System ENV variables - ##
+#### --- Linux Aliases --- #########
 ####################################
+`echo 'alias tf="terraform"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tf='`.empty?
+`echo 'alias tfa="terraform apply -auto-approve"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tfa='`.empty?
+`echo 'alias tfd="terraform destroy -force"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias tfd='`.empty?
+`echo 'alias wip="git add . && git commit -m \'wip\' && git push"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias wip='`.empty?
+`echo 'alias k="kubectl"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias k='`.empty?
+`echo 'alias d="docker"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias d='`.empty?
+`echo 'alias dc="docker-compose"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias dc='`.empty?
+
+# @linux_aliases = ["tf", "tfa", "tfd", "wip", "k", "dc", "gaa", "gcwip"]
+# @linux_aliases.each do |linux_alias|
+  # linux_alias_output = `cat ~/.bash_profile | grep 'alias #{linux_alias}='`
+  # if 
+  # binding.pry
+# end
+# env_variable = `source ~/.bash_profile && echo #{v}`.chomp
 
 
 ####################################
