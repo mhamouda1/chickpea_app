@@ -30,7 +30,6 @@ end
 ####################################
 ######### --- AWS Variables --- ####
 ####################################
-
 @aws_vars = { AWS_ACCOUNT_NUMBER: ENV['AWS_ACCOUNT_NUMBER'],
               AWS_REGION: ENV['AWS_REGION'],
               AWS_ACCESS_KEY_ID: ENV['AWS_ACCESS_KEY_ID'],
