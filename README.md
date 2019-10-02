@@ -1,15 +1,14 @@
-Install git, ruby and bundle
+Install git
 ```bash
 yum update -y && \
-yum install git
-
-mkdir ~/code
-cd ~/code
-git clone https://github.com/mhamouda1/chickpea-app
+yum install git && \
+mkdir ~/code && \
+cd ~/code && \
+git clone https://github.com/mhamouda1/chickpea-app && \
 cd chickpea-app
 ```
 
-install ruby
+install ruby and bundler
 ```bash
 yum groupinstall "Development Tools" -y && \
 yum install wget -y && \
