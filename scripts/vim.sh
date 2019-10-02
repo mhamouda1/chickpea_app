@@ -8,5 +8,4 @@ echo ':imap jk <Esc>'  >> ~/.dotfiles/vimrc && \
 echo ':imap kj <Esc>'  >> ~/.dotfiles/vimrc && \
 echo ':nmap Z :wa<CR>'  >> ~/.dotfiles/vimrc && \
 echo "Bundle 'ervandew/screen'" >> ~/.custom.vim-plugins && \
-echo "Bundle 'vim-scripts/YankRing.vim'" >> ~/.custom.vim-plugins && \
 ./setup.sh
