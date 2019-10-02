@@ -23,7 +23,7 @@ require 'open3'
 @working_directory = "#{@code_directory}/#{@app_name}"
 @github_repo = "mhamouda1/chickpea-app"
 @recommended_linux = "CentOS Linux release 7.6.1810"
-@installations = ["tmux", "vim", "ag", "docker", "docker-compose"]
+@installations = ["tmux", "vim", "ag", "docker", "docker-compose", "terraform"]
 @scripts_dir = "scripts"
 
 ####################################
