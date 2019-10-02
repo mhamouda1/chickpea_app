@@ -7,11 +7,11 @@
 ####################################
 ######### --- Gems --- #############
 ####################################
-@gems = ["pry", "colorize", "open3"]
-@gems.each do |gem|
-  IO.popen("gem install #{gem}") { |io| while (line = io.gets) do puts line end } if `which #{gem} 2>&1` =~ /no #{gem}/
-  require "#{gem}"
-end
+# @gems = ["pry", "colorize", "open3"]
+# @gems.each do |gem|
+  # IO.popen("gem install #{gem}") { |io| while (line = io.gets) do puts line end } if `which #{gem} 2>&1` =~ /no #{gem}/
+  # require "#{gem}"
+# end
 
 ####################################
 ######### --- Configuration --- ####
