@@ -1,3 +1,4 @@
+require 'open3'
 #sets up a development server
 #pre-requisites
 #- ruby 2.0+
@@ -17,18 +18,23 @@ if @debug
   p "using #{@working_directory} as working directory"
 end
 
-#installations
-#bash install tmux.sh
-#bash install vim.sh
-#bash add_swap_memory.sh
-#bash install_docker.sh
-#bash install_docker_compose.sh
-
-`mkdir -p #{@code_directory}`
-Dir.chdir(@code_directory) do
-  `git clone https://github.com/#{@github_repo}`
+#create directories and pull code
+if !File.directory?(@code_directory)
+  `mkdir -p #{@code_directory}`
+  Dir.chdir(@code_directory) do
+    `git clone https://github.com/#{@github_repo}`
+  end
 end
 
-Dir.chdir(@working_directory) do
-  p `pwd`
+#installations
+@installations = ["tmux", "vim", "silver_searcher", "docker", "docker-compose"]
+@installations.each do |installation|
+  IO.popen("bash #{installation}.sh") { |io| while (line = io.gets) do puts line end } if `which #{installation} 2>&1` =~ /no #{installation}/
+  # IO.popen('bash vim.sh') { |io| while (line = io.gets) do puts line end }
+  # IO.popen('bash silver_searcher.sh') { |io| while (line = io.gets) do puts line end }
+  #bash install vim.sh
+  #bash install silver_searcher.sh
+  #bash add_swap_memory.sh
+  #bash install_docker.sh
+  #bash install_docker_compose.sh
 end
