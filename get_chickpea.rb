@@ -9,6 +9,7 @@
 ####################################
 require 'pry'
 require 'colorize'
+require 'open3'
 
 ####################################
 ######### --- Configuration --- ####
