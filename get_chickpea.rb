@@ -14,6 +14,21 @@ require 'pry'
 ######### --- Configuration --- ####
 ####################################
 
+@debug = true
+@kill_all_ruby_processes = false
+@add_swap_memory = true
+@code_directory = "/root/code"
+@app_name = "chickpea-app"
+@working_directory = "#{@code_directory}/#{@app_name}"
+@github_repo = "mhamouda1/chickpea-app"
+@recommended_linux = "CentOS Linux release 7.6.1810"
+@installations = ["tmux", "vim", "ag", "docker", "docker-compose"]
+@scripts_dir = "linux_installations"
+
+####################################
+######### --- AWS Variables --- ####
+####################################
+
 @aws_vars = { AWS_ACCOUNT_NUMBER: ENV['AWS_ACCOUNT_NUMBER'],
               AWS_REGION: ENV['AWS_REGION'],
               AWS_ACCESS_KEY_ID: ENV['AWS_ACCESS_KEY_ID'],
@@ -28,16 +43,6 @@ require 'pry'
   end
 end
 
-@debug = true
-@add_swap_memory = true
-@code_directory = "/root/code"
-@app_name = "chickpea-app"
-@working_directory = "#{@code_directory}/#{@app_name}"
-@github_repo = "mhamouda1/chickpea-app"
-@recommended_linux = "CentOS Linux release 7.6.1810"
-@installations = ["tmux", "vim", "ag", "docker", "docker-compose"]
-@scripts_dir = "linux_installations"
-
 ####################################
 ######### --- Debug --- ############
 ####################################
@@ -45,6 +50,7 @@ if @debug
   puts "using #{`printf $(cat /etc/*-release | head -n 1)`}, recommended Linux distribution is #{@recommended_linux}".blue
   puts "using #{@working_directory} as working directory".blue
 end
+`ps aux | grep -ie ruby | awk '{print $2}' | xargs kill -9` if @kill_all_ruby_processes
 
 ####################################
 #### --- Directory Structure --- ###
@@ -78,15 +84,8 @@ end
 `echo 'alias k="kubectl"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias k='`.empty?
 `echo 'alias d="docker"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias d='`.empty?
 `echo 'alias dc="docker-compose"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias dc='`.empty?
-
-# @linux_aliases = ["tf", "tfa", "tfd", "wip", "k", "dc", "gaa", "gcwip"]
-# @linux_aliases.each do |linux_alias|
-  # linux_alias_output = `cat ~/.bash_profile | grep 'alias #{linux_alias}='`
-  # if 
-  # binding.pry
-# end
-# env_variable = `source ~/.bash_profile && echo #{v}`.chomp
-
+`echo 'alias sbp="source ~/.bash_profile"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias sbp='`.empty?
+`echo 'alias cbp="cat ~/.bash_profile"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias cbp='`.empty?
 
 ####################################
 ########## --- Done! --- ###########
