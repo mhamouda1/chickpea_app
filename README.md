@@ -14,3 +14,4 @@ gem install bundler && \
 bundle install && \
 ruby setup.rb && source ~/.bash_profile
 ```
+test
