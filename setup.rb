@@ -19,9 +19,9 @@ require 'open3'
 @kill_all_ruby_processes = false
 @add_swap_memory = true
 @code_directory = "/root/code"
-@app_name = "chickpea-app"
+@app_name = "development-machine"
 @working_directory = "#{@code_directory}/#{@app_name}"
-@github_repo = "mhamouda1/chickpea-app"
+@github_repo = "mhamouda1/development-machine"
 @recommended_linux = "CentOS Linux release 7.6.1810"
 @installations = ["tmux", "vim", "ag", "docker", "docker-compose", "terraform"]
 @scripts_dir = "scripts"
