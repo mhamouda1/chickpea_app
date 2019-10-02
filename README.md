@@ -7,6 +7,6 @@ mkdir ~/code
 cd ~/code
 git clone https://github.com/mhamouda1/chickpea-app
 cd chickpea-app
-yum install git ruby bundle -y
+yum install ruby bundle -y
 bundle install
 ```
