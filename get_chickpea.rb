@@ -36,8 +36,8 @@ if @configure_aws
                 AWS_SECRET_ACCESS_KEY: ENV['AWS_SECRET_ACCESS_KEY'] }
 
   @aws_vars.each do |k,v|
-    env_variable = `source ~/.bash_profile && echo $#{v}`.chomp
-    if env_variable.empty?
+    env_variable = `source ~/.bash_profile && echo $#{k}`.chomp
+    if env_variable == "$"
       puts "please enter #{k}"
       @aws_vars[k] = gets.chomp
       `echo "export #{k}=#{@aws_vars[k]}" >> ~/.bash_profile`
