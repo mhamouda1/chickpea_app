@@ -10,15 +10,7 @@ cd chickpea-app
 
 install ruby and bundler
 ```bash
-yum groupinstall "Development Tools" -y && \
-yum install wget -y && \
-cd /tmp && \
-wget http://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.0.tar.gz && \
-tar -xzvf ruby-2.6.0.tar.gz && \
-cd ruby-2.6.0 && \
-./configure && \
-make && \
-sudo make install && \
-ruby -v && \
-gem update --system
+yum install which -y && \
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
