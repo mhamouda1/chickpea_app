@@ -68,7 +68,7 @@ end
 ####################################
 #TODO: swap memory adds 4GB, want to add 2GB
 if @add_swap_memory
-  IO.popen("bash ./#{@scripts_dir}/add_swap_memory.sh") { |io| while (line = io.gets) do puts line end } if `cat /etc/fstab | grep swapfilde`.empty?
+  IO.popen("bash ./#{@scripts_dir}/add_swap_memory.sh") { |io| while (line = io.gets) do puts line end } if `cat /etc/fstab | grep swapfile`.empty?
 end
 
 @installations.each do |installation|
