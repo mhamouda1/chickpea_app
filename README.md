@@ -12,5 +12,5 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 source /usr/local/rvm/scripts/rvm && \
 gem install bundler && \
 bundle install && \
-ruby get_chickpea.rb && source ~/.bash_profile
+ruby setup.rb && source ~/.bash_profile
 ```
