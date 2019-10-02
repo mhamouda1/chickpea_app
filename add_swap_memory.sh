@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo dd if=/dev/zero of=/swapfile bs=2048 count=2097152 && \
 sudo chmod 600 /swapfile && \
 sudo mkswap /swapfile && \

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install tmux 2.8 on Centos
 
 # install deps
