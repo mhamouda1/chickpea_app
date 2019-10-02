@@ -1,0 +1,152 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+alias tf="terraform"
+alias tfa="terraform apply -auto-approve"
+alias wip="git add . && git commit -m wip && git push"
+alias tfd="terraform destroy -force"
+alias k="kubectl"
+alias d="docker"
+alias dc="docker-compose"
+alias sbp="source ~/.bash_profile"
+alias cbp="cat ~/.bash_profile"
+alias ebp="vim ~/.bash_profile"
+
+export AWS_REGION=us-west-1
+export TF_AWS_REGION=AWS_REGION
+export AWS_ACCESS_KEY_ID=332989382
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=39898329832
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+export AWS_REGION=3232
+export TF_AWS_REGION=AWS_REGION
+export AWS_ACCESS_KEY_ID=33
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=2323
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+alias tf="terraform"
+alias tfa="terraform apply -auto-approve"
+alias wip="git add . && git commit -m wip && git push"
+alias tfd="terraform destroy -force"
+alias k="kubectl"
+alias d="docker"
+alias dc="docker-compose"
+alias sbp="source ~/.bash_profile"
+alias cbp="cat ~/.bash_profile"
+alias ebp="vim ~/.bash_profile"
+
+export AWS_ACCOUNT_NUMBER=123
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_ACCESS_KEY_ID=332989382
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=39898329832
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+export AWS_ACCOUNT_NUMBER=398
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_ACCESS_KEY_ID=33
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=2323
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+export AWS_ACCOUNT_NUMBER=3
+export TF_VAR_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+alias tf="terraform"
+alias tfa="terraform apply -auto-approve"
+alias wip="git add . && git commit -m wip && git push"
+alias tfd="terraform destroy -force"
+alias k="kubectl"
+alias d="docker"
+alias dc="docker-compose"
+alias sbp="source ~/.bash_profile"
+alias cbp="cat ~/.bash_profile"
+alias ebp="vim ~/.bash_profile"
+
+export AWS_ACCOUNT_NUMBER=123
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=us-west-1
+export TF_AWS_REGION=AWS_REGION
+export AWS_SECRET_ACCESS_KEY=39898329832
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+export AWS_ACCOUNT_NUMBER=398
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=3232
+export TF_AWS_REGION=AWS_REGION
+export AWS_SECRET_ACCESS_KEY=2323
+export TF_AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY
+export AWS_ACCOUNT_NUMBER=3
+export TF_VAR_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=32
+export TF_VAR_AWS_REGION=AWS_REGION
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+alias tf="terraform"
+alias tfa="terraform apply -auto-approve"
+alias wip="git add . && git commit -m wip && git push"
+alias tfd="terraform destroy -force"
+alias k="kubectl"
+alias d="docker"
+alias dc="docker-compose"
+alias sbp="source ~/.bash_profile"
+alias cbp="cat ~/.bash_profile"
+alias ebp="vim ~/.bash_profile"
+
+export AWS_ACCOUNT_NUMBER=123
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=us-west-1
+export TF_AWS_REGION=AWS_REGION
+export AWS_ACCESS_KEY_ID=332989382
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_ACCOUNT_NUMBER=398
+export TF_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=3232
+export TF_AWS_REGION=AWS_REGION
+export AWS_ACCESS_KEY_ID=33
+export TF_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
+export AWS_ACCOUNT_NUMBER=3
+export TF_VAR_AWS_ACCOUNT_NUMBER=AWS_ACCOUNT_NUMBER
+export AWS_REGION=32
+export TF_VAR_AWS_REGION=AWS_REGION
+export AWS_ACCESS_KEY_ID=32
+export TF_VAR_AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID
