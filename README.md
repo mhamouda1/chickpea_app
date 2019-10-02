@@ -1,7 +1,7 @@
 Install git
 ```bash
 yum update -y && \
-yum install git && \
+yum install git -y && \
 mkdir ~/code && \
 cd ~/code && \
 git clone https://github.com/mhamouda1/chickpea-app && \
