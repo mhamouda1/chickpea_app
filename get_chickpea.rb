@@ -15,7 +15,7 @@ require 'open3'
 ######### --- Configuration --- ####
 ####################################
 @debug = false
-@configure_aws = true
+@configure_aws = false
 @kill_all_ruby_processes = false
 @add_swap_memory = true
 @code_directory = "/root/code"
