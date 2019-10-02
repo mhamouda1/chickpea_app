@@ -11,6 +11,7 @@ cd chickpea-app
 
 install ruby
 ```bash
+yum groupinstall "Development Tools" -y && \
 yum install wget -y && \
 cd /tmp && \
 wget http://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.0.tar.gz && \
