@@ -24,7 +24,7 @@ require 'open3'
 @github_repo = "mhamouda1/chickpea-app"
 @recommended_linux = "CentOS Linux release 7.6.1810"
 @installations = ["tmux", "vim", "ag", "docker", "docker-compose"]
-@scripts_dir = "lib"
+@scripts_dir = "scripts"
 
 ####################################
 ######### --- AWS Variables --- ####
