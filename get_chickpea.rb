@@ -1,4 +1,6 @@
+`gem install colorize`
 require 'open3'
+require 'colorize'
 #sets up a development server
 ####################################
 ######### --- Pre-requisites --- ###
@@ -47,3 +49,9 @@ end
 @installations.each do |installation|
   IO.popen("bash #{installation}.sh") { |io| while (line = io.gets) do puts line end } if `which #{installation} 2>&1` =~ /no #{installation}/
 end
+
+####################################
+## - Linux System ENV variables - ##
+####################################
+
+puts "Setup complete!".green
