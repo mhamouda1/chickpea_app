@@ -1,20 +1,21 @@
-require 'open3'
-require 'colorize'
-require 'pry'
-
-#sets up a development server
 ####################################
 ######### --- Pre-requisites --- ###
 ####################################
 #- ruby 2.0+
-#  - colorize gem # gem install colorize
-#  - pry gem # gem install pry
 #- git 1.8+
+
+####################################
+######### --- Gems --- #############
+####################################
+@gems = ["pry", "colorize", "open3"]
+@gems.each do |gem|
+  IO.popen("gem install #{gem}") { |io| while (line = io.gets) do puts line end } if `which #{gem} 2>&1` =~ /no #{gem}/
+  require "#{gem}"
+end
 
 ####################################
 ######### --- Configuration --- ####
 ####################################
-
 @debug = false
 @kill_all_ruby_processes = false
 @add_swap_memory = true
