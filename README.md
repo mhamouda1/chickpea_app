@@ -16,3 +16,8 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 gem install bundler && \
 bundle install
 ```
+
+Run the get_chickpea.rb file and source your ~/.bash_profile
+```bash
+ruby get_chickpea.rb && source ~/.bash_profile
+```
