@@ -15,6 +15,7 @@ require 'open3'
 ######### --- Configuration --- ####
 ####################################
 @debug = false
+@configure_aws = true
 @kill_all_ruby_processes = false
 @add_swap_memory = true
 @code_directory = "/root/code"
@@ -28,17 +29,19 @@ require 'open3'
 ####################################
 ######### --- AWS Variables --- ####
 ####################################
-@aws_vars = { AWS_ACCOUNT_NUMBER: ENV['AWS_ACCOUNT_NUMBER'],
-              AWS_REGION: ENV['AWS_REGION'],
-              AWS_ACCESS_KEY_ID: ENV['AWS_ACCESS_KEY_ID'],
-              AWS_SECRET_ACCESS_KEY: ENV['AWS_SECRET_ACCESS_KEY'] }
+if @configure_aws
+  @aws_vars = { AWS_ACCOUNT_NUMBER: ENV['AWS_ACCOUNT_NUMBER'],
+                AWS_REGION: ENV['AWS_REGION'],
+                AWS_ACCESS_KEY_ID: ENV['AWS_ACCESS_KEY_ID'],
+                AWS_SECRET_ACCESS_KEY: ENV['AWS_SECRET_ACCESS_KEY'] }
 
-@aws_vars.each do |k,v|
-  env_variable = `source ~/.bash_profile && echo $#{v}`.chomp
-  if env_variable.empty?
-    puts "please enter #{k}"
-    @aws_vars[k] = gets.chomp
-    `echo "export #{k}=#{@aws_vars[k]}" >> ~/.bash_profile`
+  @aws_vars.each do |k,v|
+    env_variable = `source ~/.bash_profile && echo $#{v}`.chomp
+    if env_variable.empty?
+      puts "please enter #{k}"
+      @aws_vars[k] = gets.chomp
+      `echo "export #{k}=#{@aws_vars[k]}" >> ~/.bash_profile`
+    end
   end
 end
 
