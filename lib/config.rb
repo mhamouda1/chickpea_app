@@ -9,4 +9,4 @@
 @github_repo = "mhamouda1/development-machine"
 @recommended_linux = "CentOS Linux release 7.6.1810"
 @installations = ["tmux", "vim", "docker", "docker-compose", "terraform", "ag"]
-@scripts_dir = "../scripts"
+@scripts_dir = "scripts"
