@@ -1,6 +1,3 @@
-####################################
-######### --- Installations --- ####
-####################################
 if @add_swap_memory
   IO.popen("bash ./#{@scripts_dir}/add_swap_memory.sh") { |io| while (line = io.gets) do puts line end } if `cat /etc/fstab | grep swapfile`.empty?
 end
