@@ -9,6 +9,7 @@
   gc: "git commit -m",
   k: "kubectl",
   d: "docker",
+  r: "ruby",
   dc: "docker-compose",
   sbp: "source ~/.bash_profile",
   cbp: "cat ~/.bash_profile",
