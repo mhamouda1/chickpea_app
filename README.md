@@ -1,4 +1,4 @@
-Sets up a development machine with vim, tmux, silver-searcher, terraform, docker, and docker-compose
+Sets up a development machine with vim, tmux, silver searcher, terraform, docker, and docker-compose
 
 Install git, clone the project, install rvm/ruby/bundler, and run setup
 ```bash
