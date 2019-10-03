@@ -4,100 +4,15 @@
 #- ruby 2.3+
 #- git 1.8+
 
-####################################
-######### --- Gems --- #############
-####################################
 require 'pry'
 require 'colorize'
 require 'open3'
 
-####################################
-######### --- Configuration --- ####
-####################################
-@debug = false
-@configure_aws = false
-@create_terraform_variables = true
-@kill_all_ruby_processes = false
-@add_swap_memory = true
-@code_directory = "/root/code"
-@app_name = "development-machine"
-@working_directory = "#{@code_directory}/#{@app_name}"
-@github_repo = "mhamouda1/development-machine"
-@recommended_linux = "CentOS Linux release 7.6.1810"
-@installations = ["tmux", "vim", "docker", "docker-compose", "terraform", "ag"]
-@scripts_dir = "scripts"
+require_relative 'lib/config'
+require_relative 'lib/aws_variables'
+require_relative 'lib/debug'
+require_relative 'lib/directory_structure'
+require_relative 'lib/installations'
+require_relative 'lib/linux_aliases'
 
-####################################
-######### --- AWS Variables --- ####
-####################################
-if @configure_aws
-  @aws_vars = { AWS_ACCOUNT_NUMBER: ENV['AWS_ACCOUNT_NUMBER'],
-                AWS_REGION: ENV['AWS_REGION'],
-                AWS_ACCESS_KEY_ID: ENV['AWS_ACCESS_KEY_ID'],
-                AWS_SECRET_ACCESS_KEY: ENV['AWS_SECRET_ACCESS_KEY'] }
-
-  @aws_vars.each do |k,v|
-    env_variable = `source ~/.bash_profile && echo $#{k}`.chomp
-    puts "please enter #{k}"
-    @aws_vars[k] = gets.chomp
-    `awk '!/#{k.to_s}/' ~/.bash_profile > temp && mv temp ~/.bash_profile`
-    `echo "export #{k.to_s}=#{@aws_vars[k]}" >> ~/.bash_profile`
-    `echo 'export TF_VAR_#{k.to_s}=\$#{k.to_s}' >> ~/.bash_profile` if @create_terraform_variables
-  end
-end
-
-####################################
-######### --- Debug --- ############
-####################################
-if @debug
-  puts "using #{`printf $(cat /etc/*-release | head -n 1)`}, recommended Linux distribution is #{@recommended_linux}".blue
-  puts "using #{@working_directory} as working directory".blue
-end
-`ps aux | grep -ie ruby | awk '{print $2}' | xargs kill -9` if @kill_all_ruby_processes
-
-####################################
-#### --- Directory Structure --- ###
-####################################
-if !File.directory?(@code_directory)
-  `mkdir -p #{@code_directory}`
-  Dir.chdir(@code_directory) do
-    `git clone https://github.com/#{@github_repo}`
-  end
-end
-
-####################################
-######### --- Installations --- ####
-####################################
-if @add_swap_memory
-  IO.popen("bash ./#{@scripts_dir}/add_swap_memory.sh") { |io| while (line = io.gets) do puts line end } if `cat /etc/fstab | grep swapfile`.empty?
-end
-
-@installations.each do |installation|
-  IO.popen("bash ./#{@scripts_dir}/#{installation}.sh") { |io| while (line = io.gets) do puts line end } if `which #{installation} 2>&1` =~ /no #{installation}/
-end
-
-####################################
-#### --- Linux Aliases --- #########
-####################################
-@linux_aliases = {
-  tf: "terraform",
-  tfa: "terraform apply -auto-approve",
-  tfd: "terraform destroy -force",
-  wip: "git add . && git commit -m \'wip\' && git push",
-  gs: "git status",
-  gaa: "git add .",
-  k: "kubectl",
-  d: "docker",
-  dc: "docker-compose",
-  sbp: "source ~/.bash_profile",
-  cbp: "cat ~/.bash_profile",
-  ebp: "vim ~/.bash_profile",
-}
-@linux_aliases.each do |k,v|
-  `echo 'alias #{k}="#{v}"' >> ~/.bash_profile` if `cat ~/.bash_profile | grep 'alias #{k}='`.empty?
-end
-
-####################################
-########## --- Done! --- ###########
-####################################
 puts "Setup complete!".green
