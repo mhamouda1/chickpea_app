@@ -6,6 +6,7 @@
   gs: "git status",
   gaa: "git add .",
   gau: "git add -u",
+  gc: "git commit -m",
   k: "kubectl",
   d: "docker",
   dc: "docker-compose",
