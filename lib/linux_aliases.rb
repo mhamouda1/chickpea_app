@@ -5,6 +5,7 @@
   wip: "git add . && git commit -m \'wip\' && git push",
   gs: "git status",
   gaa: "git add .",
+  gau: "git add -u",
   k: "kubectl",
   d: "docker",
   dc: "docker-compose",
