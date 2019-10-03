@@ -1,6 +1,6 @@
 Sets up a development machine with vim, tmux, silver searcher, terraform, docker, and docker-compose
 
-Install git, clone the project, install rvm/ruby/bundler, and run setup
+Copy and paste the one liner below to install git, clone the project, install rvm/ruby/bundler, and run setup
 ```bash
 yum update -y && \
 yum install git -y && \
