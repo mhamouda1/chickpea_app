@@ -4,8 +4,8 @@
 #- ruby 2.3+
 #- git 1.8+
 
-require 'pry'
-require 'colorize'
+require 'bundler/setup'
+Bundler.require(:default)
 require 'open3'
 
 require_relative 'config'
