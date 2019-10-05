@@ -1,5 +1,5 @@
 @debug = false
-@configure_aws = true
+@configure_aws = false
 @create_terraform_variables = true
 @kill_all_ruby_processes = false
 @add_swap_memory = true
