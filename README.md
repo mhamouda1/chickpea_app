@@ -4,7 +4,7 @@ Copy and paste the one liner below on a fresh CentOS 7 machine to install git, c
 ```bash
 yum update -y && \
 yum install git -y && \
-mkdir ~/code && \
+mkdir -p ~/code && \
 cd ~/code && \
 git clone https://github.com/mhamouda1/development-machine && \
 cd development-machine && \
