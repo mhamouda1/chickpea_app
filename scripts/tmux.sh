@@ -26,6 +26,11 @@
 # # close your terminal window (flushes cached tmux executable)
 # # open new shell and check tmux version
 # tmux -V
-yum install libevent ncurses-compat-libs -y
-curl -Lo /usr/local/bin/tmux https://github.com/mhamouda1/packages/raw/master/tmux && chmod +x /usr/local/bin/tmux
-tmux -V
+
+#looks like ncurses-compat-libs is not in centos standard repolist
+#yum install libevent ncurses-compat-libs -y
+#curl -Lo /usr/local/bin/tmux https://github.com/mhamouda1/packages/raw/master/tmux && chmod +x /usr/local/bin/tmux
+#tmux -V
+
+yum install yum-utils -y
+yum-config-manager --add-repo http://157.230.85.89/my-repo.repo
