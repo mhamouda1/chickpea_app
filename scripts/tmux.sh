@@ -34,3 +34,4 @@
 
 yum install yum-utils -y
 yum-config-manager --add-repo http://157.230.85.89/my-repo.repo
+yum install tmux -y
