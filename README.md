@@ -20,15 +20,13 @@ ruby setup.rb && source ~/.bash_profile
 
 ```bash
 #faster install
-yum update -y && \
-yum install git -y && \
+apt-get update -y && \
+apt-get install git -y && \
 mkdir -p ~/code && \
 cd ~/code && \
 git clone https://github.com/mhamouda1/development-machine && \
 cd development-machine && \
-yum install sudo -y && \
-yum install which -y && \
-yum install ruby -y && \
+apt-get install ruby -y && \
 gem install bundler && \
 bundle install && \
 ruby setup.rb && source ~/.bash_profile
