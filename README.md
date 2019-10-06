@@ -22,6 +22,7 @@ ruby setup.rb && source ~/.bash_profile
 #faster install
 apt-get update -y && \
 apt-get install git -y && \
+apt-get remove vim -y && \
 mkdir -p ~/code && \
 cd ~/code && \
 git clone https://github.com/mhamouda1/development-machine && \
