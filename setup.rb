@@ -9,6 +9,7 @@ Bundler.require(:default)
 require 'open3'
 
 require_relative 'lib/args'
+require_relative 'lib/get_os'
 require_relative 'config'
 #require_relative 'lib/install_repo'
 require_relative 'lib/aws_variables'
